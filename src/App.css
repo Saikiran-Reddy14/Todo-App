@@ -1,0 +1,10 @@
+body {
+  background-color: #d1e9f6;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
