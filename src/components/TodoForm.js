@@ -17,6 +17,10 @@ const TodoForm = ({ todoToEdit, onCancel, topRef }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (todo.trim().length === 0) {
+      return alert("Todo cannot be empty");
+    }
     if (todoToEdit) {
       dispatch(
         updateTodo({
@@ -24,6 +28,7 @@ const TodoForm = ({ todoToEdit, onCancel, topRef }) => {
           todo,
         })
       );
+      alert("Todo updated successfully");
     } else {
       dispatch(
         addTodo({
@@ -31,6 +36,7 @@ const TodoForm = ({ todoToEdit, onCancel, topRef }) => {
           todo,
         })
       );
+      alert("Todo created successfully");
     }
     setTodo("");
     onCancel();
